@@ -1,0 +1,27 @@
+# stack -> nodes need to be visited.
+# visited -> already visited.
+
+graph = {1: set([3,4]),
+         2: set([3,4,5]),
+         3: set([1,5]),
+         4: set([1]),
+         5: set([2,6]),
+         6: set([3,5])
+         }
+rootNode = 1
+
+
+def DFSadjList(graph,root):
+    visited = []
+    stack = [root] #stack -> nodes need to be visited.
+
+    while stack:
+        n = stack.pop()
+        if n not in visited:
+            visited.append(n) # let this node set to visited.
+            stack += graph[n] - set(visited) # find next nodes to be visited.
+
+    return visited
+
+print(DFSadjList(graph,rootNode))
+    

@@ -11,7 +11,7 @@ graph = {1: set([3,4]),
 rootNode = 1
 
 
-def DFSadjList(graph,root):
+def DFS(graph,root):
     visited = []
     stack = [root] #stack -> nodes need to be visited.
 

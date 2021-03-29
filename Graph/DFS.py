@@ -20,8 +20,8 @@ def DFS(graph,root):
         if n not in visited:
             visited.append(n) # let this node set to visited.
             stack += graph[n] - set(visited) # find next nodes to be visited.
-
     return visited
 
-print(DFSadjList(graph,rootNode))
-    
+ 
+
+print(DFS(graph,rootNode))
